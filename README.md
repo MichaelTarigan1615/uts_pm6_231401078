@@ -1,8 +1,10 @@
 # uts_pemmob
 
-A new Flutter project.
+Nama  : Michael Pranata Tarigan
+NIM  : 231401078
+Lab  : 6
 
-## Getting Started
+## MathQuiz
 
 This project is a starting point for a Flutter application.
 
