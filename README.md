@@ -9,8 +9,7 @@
 **MathQuiz**  
 
 ## c. Deskripsi Aplikasi  
-MathQuiz adalah aplikasi kuis interaktif yang membantu pengguna melatih kemampuan berhitung secara menyenangkan.  
-Aplikasi ini menyajikan berbagai pertanyaan matematika dengan tingkat kesulitan yang acak, disertai tampilan sederhana dan hasil skor untuk memotivasi pengguna meningkatkan kemampuan mereka.  
+MathQuiz adalah aplikasi kuis interaktif yang membantu pengguna melatih kemampuan berhitung secara menyenangkan. Aplikasi ini menyajikan berbagai pertanyaan matematika dengan tingkat kesulitan yang acak, disertai tampilan sederhana dan hasil skor untuk memotivasi pengguna meningkatkan kemampuan mereka.  
 
 ## d. Credit ke sumber-sumber aset yang digunakan  
 - [Viral Solutions – Building Quiz Funnels](https://viralsolutions.net/value-of-quizzes-part-2-building-quiz-funnels/) 
