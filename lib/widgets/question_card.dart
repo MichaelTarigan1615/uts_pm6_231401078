@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class QuestionCard extends StatelessWidget {
   final String question;
-  final List<Strinq> options;
+  final List<String> options;
   final ValueChanged<int> onSelected;
 
   const QuestionCard({
@@ -10,7 +10,7 @@ class QuestionCard extends StatelessWidget {
     required this.question,
     required this.options,
     required this.onSelected,
-  })
+  });
 
   @override
   Widget build(BuildContext context) {
