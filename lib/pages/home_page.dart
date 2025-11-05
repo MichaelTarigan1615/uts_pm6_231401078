@@ -23,8 +23,11 @@ class _HomePageState extends State<HomePage> {
           children: [
             Image.asset('assets/quiz.png', height: screenHeight * 0.25),
             const SizedBox(height: 30),
-            const Text("Selamat Datang di Kuis Pintar!",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+            const Text(
+              "Selamat Datang di MathQuiz!",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
             const SizedBox(height: 20),
             TextField(
               controller: _nameController,
@@ -38,8 +41,11 @@ class _HomePageState extends State<HomePage> {
               text: "Mulai Kuis",
               onTap: () {
                 if (_nameController.text.isNotEmpty) {
-                  Navigator.pushNamed(context, '/quiz',
-                      arguments: _nameController.text);
+                  Navigator.pushNamed(
+                    context,
+                    '/quiz',
+                    arguments: {'name': _nameController.text}, // ✅ kirim dalam Map
+                  );
                 }
               },
             ),

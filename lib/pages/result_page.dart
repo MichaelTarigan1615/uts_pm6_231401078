@@ -7,7 +7,9 @@ class ResultPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final score = ModalRoute.of(context)?.settings.arguments as int? ?? 0;
+    final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>? ?? {};
+    final score = args['score'] ?? 0;
+    final name = args['name'] ?? 'Pengguna';
     final total = questions.length;
 
     return Scaffold(
@@ -20,15 +22,25 @@ class ResultPage extends StatelessWidget {
             children: [
               Image.asset('assets/trophy.png', height: 150),
               const SizedBox(height: 30),
+
               Text(
-                "Skor Akhir Kamu: $score / $total",
+                "Selamat $name!",
                 style: const TextStyle(
-                  fontSize: 24,
+                  fontSize: 26,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 16),
+              Text(
+                "Skor Akhir Kamu: $score / $total",
+                style: const TextStyle(
+                  fontSize: 22,
+                  color: Colors.white,
+                ),
+              ),
+              const SizedBox(height: 30),
+
               CustomButton(
                 text: "Kembali ke Beranda",
                 onTap: () {

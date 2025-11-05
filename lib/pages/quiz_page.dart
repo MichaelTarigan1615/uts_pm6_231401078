@@ -26,19 +26,28 @@ class _QuizPageState extends State<QuizPage>
     if (currentIndex < questions.length - 1) {
       setState(() => currentIndex++);
     } else {
-      Navigator.pushReplacementNamed(context, '/result', arguments: score);
+      final name =
+          (ModalRoute.of(context)?.settings.arguments as Map?)?['name'] ??
+              'Pengguna';
+
+      Navigator.pushReplacementNamed(
+        context,
+        '/result',
+        arguments: {'name': name, 'score': score},
+      );
     }
   }
 
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    final name = ModalRoute.of(context)?.settings.arguments as String?;
+    final args = ModalRoute.of(context)?.settings.arguments as Map?;
+    final name = args?['name'] ?? 'Pengguna';
     final question = questions[currentIndex];
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Hai, ${name ?? 'Pengguna'}"),
+        title: Text("Hai, $name"),
       ),
       body: Column(
         children: [
@@ -61,8 +70,16 @@ class _QuizPageState extends State<QuizPage>
                 if (currentIndex < questions.length - 1) {
                   setState(() => currentIndex++);
                 } else {
-                  Navigator.pushReplacementNamed(context, '/result',
-                      arguments: score);
+                  final name =
+                      (ModalRoute.of(context)?.settings.arguments as Map?)?[
+                              'name'] ??
+                          'Pengguna';
+
+                  Navigator.pushReplacementNamed(
+                    context,
+                    '/result',
+                    arguments: {'name': name, 'score': score},
+                  );
                 }
               },
             ),

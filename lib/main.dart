@@ -4,13 +4,13 @@ import 'pages/quiz_page.dart';
 import 'pages/result_page.dart';
 
 void main() {
-  runApp(const QuizApp());
+  runApp(const MathQuiz());
 }
 
-class QuizApp extends StatelessWidget {
-  const QuizApp({super.key});
+class MathQuiz extends StatelessWidget {
+  const MathQuiz({super.key});
 
- @override
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Kuis Pintar',
@@ -18,7 +18,7 @@ class QuizApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        fontFamily: 'Poppins', // font kustom
+        fontFamily: 'Poppins', 
         brightness: Brightness.light,
       ),
       darkTheme: ThemeData(
