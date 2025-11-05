@@ -25,6 +25,7 @@ class ResultPage extends StatelessWidget {
 
               Text(
                 "Selamat $name!",
+                textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.bold,
