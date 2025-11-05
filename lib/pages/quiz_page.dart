@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../data/questions.dart';
 import '../widgets/question_card.dart';
-import '../widgets/custom_buttom.dart';
+import '../widgets/custom_button.dart';
 
 class QuizPage extends StatefulWidget {
   const QuizPage({super.key});
