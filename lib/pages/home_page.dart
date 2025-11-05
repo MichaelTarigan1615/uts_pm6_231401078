@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/quiz.png', height: screenHeight * 0.25), // gambar aset
+            Image.asset('assets/quiz.png', height: screenHeight * 0.25),
             const SizedBox(height: 30),
             const Text("Selamat Datang di Kuis Pintar!",
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),

@@ -46,7 +46,6 @@ class _QuizPageState extends State<QuizPage>
             value: (currentIndex + 1) / questions.length,
             backgroundColor: Colors.grey[300],
           ),
-
           Expanded(
             child: QuestionCard(
               question: question.questionText,
@@ -54,7 +53,6 @@ class _QuizPageState extends State<QuizPage>
               onSelected: answerQuestion,
             ),
           ),
-
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: CustomButton(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/custom_button.dart';
-import '../data/questions.dart'; 
+import '../data/questions.dart';
 
 class ResultPage extends StatelessWidget {
   const ResultPage({super.key});
@@ -8,7 +8,7 @@ class ResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final score = ModalRoute.of(context)?.settings.arguments as int? ?? 0;
-    final total = questions.length; 
+    final total = questions.length;
 
     return Scaffold(
       backgroundColor: Colors.black,
