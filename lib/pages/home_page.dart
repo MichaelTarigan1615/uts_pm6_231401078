@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
                   Navigator.pushNamed(
                     context,
                     '/quiz',
-                    arguments: {'name': _nameController.text}, // ✅ kirim dalam Map
+                    arguments: {'name': _nameController.text},
                   );
                 }
               },
