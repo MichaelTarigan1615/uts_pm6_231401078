@@ -10,13 +10,9 @@ class QuizPage extends StatefulWidget {
   State<QuizPage> createState() => _QuizPageState();
 }
 
-class _QuizPageState extends State<QuizPage>
-    with AutomaticKeepAliveClientMixin {
+class _QuizPageState extends State<QuizPage> {
   int currentIndex = 0;
   int score = 0;
-
-  @override
-  bool get wantKeepAlive => true;
 
   void answerQuestion(int selectedIndex) {
     if (selectedIndex == questions[currentIndex].correctAnswerIndex) {
@@ -26,9 +22,8 @@ class _QuizPageState extends State<QuizPage>
     if (currentIndex < questions.length - 1) {
       setState(() => currentIndex++);
     } else {
-      final name =
-          (ModalRoute.of(context)?.settings.arguments as Map?)?['name'] ??
-              'Pengguna';
+      final args = ModalRoute.of(context)?.settings.arguments as Map?;
+      final name = args?['name'] ?? 'Pengguna';
 
       Navigator.pushReplacementNamed(
         context,
@@ -38,16 +33,26 @@ class _QuizPageState extends State<QuizPage>
     }
   }
 
+  void goBackToPreviousQuestion() {
+    if (currentIndex > 0) {
+      setState(() => currentIndex--);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    super.build(context);
     final args = ModalRoute.of(context)?.settings.arguments as Map?;
     final name = args?['name'] ?? 'Pengguna';
     final question = questions[currentIndex];
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Hai, $name"),
+        centerTitle: true,
+        title: const Text("Selamat Mengerjakan Quiz"),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: goBackToPreviousQuestion,
+        ),
       ),
       body: Column(
         children: [
@@ -70,11 +75,6 @@ class _QuizPageState extends State<QuizPage>
                 if (currentIndex < questions.length - 1) {
                   setState(() => currentIndex++);
                 } else {
-                  final name =
-                      (ModalRoute.of(context)?.settings.arguments as Map?)?[
-                              'name'] ??
-                          'Pengguna';
-
                   Navigator.pushReplacementNamed(
                     context,
                     '/result',
